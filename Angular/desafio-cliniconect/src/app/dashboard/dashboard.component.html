@@ -1,0 +1,353 @@
+<section *ngIf="Allcadastros | async as cadastros">
+
+    <div class="indice">
+        <div class="indice__contagem">
+            <h1>Pacientes Cadastrados: </h1>
+            <h1> {{cadastros.length}}</h1>
+
+        </div>
+        <div class="search">
+            <div class="search__input">
+                <input class="search__input__decoration" (keyup.enter)="onSearch()" [formControl]="queryField"
+                    type="text" id="myInput" placeholder="">
+                <button class="search__button__decoration" (click)="onSearch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="dashboard">
+        <table *ngIf="exibeDashboard">
+            <tr class="table__dashboard">
+                <td class="table__titles">NOME</td>
+                <td class="table__titles">DATA DE NASCIMENTO</td>
+                <td class="table__titles">SEXO</td>
+                <td class="table__titles">NATURALIDADE</td>
+                <td class="table__titles">TELEFONE</td>
+                <td class="table__titles">FICHA</td>
+
+            </tr>
+
+            <tr class="dashboard__focus" *ngFor="let cadastro of cadastros">
+                <td>{{cadastro.nome}}</td>
+                <td>{{cadastro.dataNasc}}</td>
+                <td>{{cadastro.sexo}}</td>
+                <td>{{cadastro.naturalidade}}</td>
+                <td>{{cadastro.telefone}}</td>
+
+                <td><button (click)="mostraDetalhesDashboard(cadastro.nome)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button></td>
+
+            </tr>
+
+
+
+        </table>
+
+        <div class="ficha" *ngIf="exibeDetalhes">
+
+            <div class="ficha__areas" *ngFor="let detalhe of detalhesDashboard | async">
+                <div class="ficha__areas__identificacao">
+                    <div class="ficha__areas__identificacao__cabecalho">
+                        <h1>Identificação</h1>
+                        <button (click)="fechaDetalhesDashboard()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                            </svg>
+                        </button>
+
+                    </div>
+
+
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Nome:
+                            </label>
+                            <p>{{detalhe.nome}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Data de Nascimento:
+                            </label>
+                            <p>{{detalhe.dataNasc}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Telefone:
+                            </label>
+                            <p>{{detalhe.telefone}}</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Sexo:
+                            </label>
+                            <p>{{detalhe.sexo}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Naturalidade:
+                            </label>
+                            <p>{{detalhe.naturalidade}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Estado Civil:
+                            </label>
+                            <p>{{detalhe.estadoCivil}}</p>
+                        </div>
+                    </div>
+
+                    <div class="linha__individual">
+                        <label>
+                            Profisssão:
+                        </label>
+                        <p>{{detalhe.profissao}}</p>
+                    </div>
+                </div>
+
+
+
+                <div class="ficha__areas__endereco">
+                    <h1>Endereço</h1>
+
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Cidade:
+                            </label>
+                            <p>{{detalhe.cidade}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Bairro:
+                            </label>
+                            <p>{{detalhe.bairro}}</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Endereço Residencial:
+                            </label>
+                            <p>{{detalhe.enderecoResidencial}}</p>
+                        </div>
+
+
+                        <div>
+                            <label>
+                                Endereço Comercial:
+                            </label>
+                            <p>{{detalhe.enderecoComercial}}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="ficha__areas__endereco">
+                    <h1>Diagnósticos</h1>
+
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Diagnóstico Clínico
+                            </label>
+                            <p>{{detalhe.diagClini}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Diagnóstico Fisioterapêutico
+                            </label>
+                            <p>{{detalhe.diagFisio}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="dashboard">
+        <table *ngIf="!exibeDashboard">
+            <tr class="table__dashboard">
+                <td class="table__titles">NOME</td>
+                <td class="table__titles">DATA DE NASCIMENTO</td>
+                <td class="table__titles">SEXO</td>
+                <td class="table__titles">NATURALIDADE</td>
+                <td class="table__titles">TELEFONE</td>
+                <td class="table__titles">FICHA</td>
+
+            </tr>
+            <tr class="dashboard__focus" *ngFor="let result of results | async">
+                <td>{{result.nome}}</td>
+                <td>{{result.dataNasc}}</td>
+                <td>{{result.sexo}}</td>
+                <td>{{result.naturalidade}}</td>
+                <td>{{result.telefone}}</td>
+
+                <td><svg (click)="mostraDetalhesPersonalizado(result.nome)" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg></td>
+
+            </tr>
+
+
+
+        </table>
+        <div class="ficha" *ngIf="exibeDetalhesPersonalizado">
+
+            <div class="ficha__areas" *ngFor="let detalhePersonalizado of detalhesDashboardPersonalizados | async">
+                <div class="ficha__areas__identificacao">
+                    <div class="ficha__areas__identificacao__cabecalho">
+                        <h1>Identificação</h1>
+                        <button type="button" (click)="fechaDetalhesPersonalizado()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                            </svg>
+                        </button>
+
+                    </div>
+
+
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Nome:
+                            </label>
+                            <p>{{detalhePersonalizado.nome}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Data de Nascimento:
+                            </label>
+                            <p>{{detalhePersonalizado.dataNasc}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Telefone:
+                            </label>
+                            <p>{{detalhePersonalizado.telefone}}</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Sexo:
+                            </label>
+                            <p>{{detalhePersonalizado.sexo}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Naturalidade:
+                            </label>
+                            <p>{{detalhePersonalizado.naturalidade}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Estado Civil:
+                            </label>
+                            <p>{{detalhePersonalizado.estadoCivil}}</p>
+                        </div>
+                    </div>
+
+                    <div class="linha__individual">
+                        <label>
+                            Profisssão:
+                        </label>
+                        <p>{{detalhePersonalizado.profissao}}</p>
+                    </div>
+                </div>
+
+
+
+                <div class="ficha__areas__endereco">
+                    <h1>Endereço</h1>
+
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Cidade:
+                            </label>
+                            <p>{{detalhePersonalizado.cidade}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Bairro:
+                            </label>
+                            <p>{{detalhePersonalizado.bairro}}</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Endereço Residencial:
+                            </label>
+                            <p>{{detalhePersonalizado.enderecoResidencial}}</p>
+                        </div>
+
+
+                        <div>
+                            <label>
+                                Endereço Comercial:
+                            </label>
+                            <p>{{detalhePersonalizado.enderecoComercial}}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="ficha__areas__endereco">
+                    <h1>Diagnósticos</h1>
+
+                    <div class="linha">
+                        <div>
+                            <label>
+                                Diagnóstico Clínico
+                            </label>
+                            <p>{{detalhePersonalizado.diagClini}}</p>
+                        </div>
+                        <div>
+                            <label>
+                                Diagnóstico Fisioterapêutico
+                            </label>
+                            <p>{{detalhePersonalizado.diagFisio}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>

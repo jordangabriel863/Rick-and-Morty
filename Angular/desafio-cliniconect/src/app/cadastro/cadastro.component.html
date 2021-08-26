@@ -1,0 +1,252 @@
+<section>
+    <div class="cadastro">
+        <p>Avaliação Fisioterapêutica</p>
+    </div>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+
+        <div class="identificacao">
+
+            <div class="decoration-title">
+                Identificação
+            </div>
+            <div class="nome">
+                <div class="flex">
+                    <label class="labels__decoration" for="nome">Nome</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration" [ngClass]="aplicaCssErro('nome')" type="text"
+                        formControlName="nome" id="nome" placeholder="Nome">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('nome')"
+                        msgErro="Nome é obrigatório.">
+                    </app-campo-control-erro>
+                </div>
+            </div>
+
+
+            <div class="dataNasc">
+                <div class="flex">
+                    <label class="labels__decoration" for="dataNasc">Data de Nascimento</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration2" [ngClass]="aplicaCssErro('dataNasc')" type="date"
+                        formControlName="dataNasc" id="dataNasc" placeholder="dd/mm/aaaa">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('dataNasc')"
+                        msgErro="Data de Nascimento obrigatória.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+
+            <div class="telefone">
+                <div class="flex">
+                    <label class="labels__decoration" for="telefone">Telefone</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration" [ngClass]="aplicaCssErro('telefone')" type="text"
+                        formControlName="telefone" id="telefone" placeholder="Telefone">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('telefone')"
+                        msgErro="Nome é obrigatório.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+
+            <div class="sexo">
+                <div class="flex">
+                    <label class="labels__decoration" for="sexo">Sexo</label>
+
+                </div>
+                <div>
+                    <select class="select__decoration" [ngClass]="aplicaCssErro('sexo')" formControlName="sexo">
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                    </select>
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('sexo')"
+                        msgErro="Sexo é obrigatório.">
+                    </app-campo-control-erro>
+
+
+                </div>
+            </div>
+
+
+            <div class="naturalidade">
+                <div class="flex">
+                    <label class="labels__decoration" for="naturalidade">Naturalidade</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration" [ngClass]="aplicaCssErro('naturalidade')" type="text"
+                        formControlName="naturalidade" id="naturalidade" placeholder="Naturalidade">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('naturalidade')"
+                        msgErro="Naturalidade obrigatória.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+
+            <div class="estadocivil">
+                <div class="flex">
+                    <label class="labels__decoration" for="estadocivil">Estado Civil</label>
+
+                </div>
+                <div>
+                    <select class="select__decoration" [ngClass]="aplicaCssErro('estadocivil')"
+                        formControlName="estadocivil">
+                        <option>Solteiro(a)</option>
+                        <option>Viúvo(a)</option>
+                        <option>Casado(a)</option>
+                    </select>
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('estadocivil')"
+                        msgErro="Estado Civil obrigatório.">
+                    </app-campo-control-erro>
+
+
+                </div>
+            </div>
+
+
+            <div class="profissao">
+                <div class="flex">
+                    <label class="labels__decoration" for="profissao">Profissão</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration__complete" [ngClass]="aplicaCssErro('profissao')" type="text"
+                        formControlName="profissao" id="profissao" placeholder="Profissão">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('profissao')"
+                        msgErro="Profissão obrigatória.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="endereco">
+
+            <h1 class="decoration-title">Endereço</h1>
+            <div class="cidade">
+                <div class="flex">
+                    <label class="labels__decoration" for="cidade">Cidade</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration" [ngClass]="aplicaCssErro('cidade')" type="text"
+                        formControlName="cidade" id="cidade" placeholder="Cidade">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('cidade')"
+                        msgErro="Cidade obrigatória.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+
+            <div class="bairro">
+                <div class="flex">
+                    <label class="labels__decoration" for="bairro">Bairro</label>
+
+
+                </div>
+                <div>
+                    <input class="inputs__decoration" [ngClass]="aplicaCssErro('bairro')" type="text"
+                        formControlName="bairro" id="bairro" placeholder="Bairro">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('bairro')"
+                        msgErro="Bairro obrigatório.">
+                    </app-campo-control-erro>
+                </div>
+            </div>
+
+
+            <div class="endresidencial">
+                <div class="flex">
+                    <label class="labels__decoration" for="endresidencial">Endereço Residencial</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration__complete" [ngClass]="aplicaCssErro('endresidencial')" type="text"
+                        formControlName="endresidencial" id="endresidencial" placeholder="Endereço Residencial">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('endresidencial')"
+                        msgErro="Endereço Residencial obrigatório.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+
+            <div class="endcomercial">
+                <div class="flex">
+                    <label class="labels__decoration" for="endcomercial">Endereço Comercial</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration__complete" [ngClass]="aplicaCssErro('endcomercial')" type="text"
+                        formControlName="endcomercial" id="endcomercial" placeholder="Endereço Comercial">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('endcomercial')"
+                        msgErro="Endereço Comercial obrigatório.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="diagnostico">
+            <div class="decoration-title">
+                <h2>Diagnóstico</h2>
+            </div>
+
+
+            <div class="dgclini">
+                <div class="flex">
+                    <label class="labels__decoration" for="dgclini">Diagnóstico Clinico</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration__complete" [ngClass]="aplicaCssErro('dgclini')" type="text"
+                        formControlName="dgclini" id="dgclini" placeholder=" Diagnóstico Clinico">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('dgclini')"
+                        msgErro="Endereço Comercial obrigatório.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+
+            <div class="dgfisio">
+                <div class="flex">
+                    <label class="labels__decoration" for="dgfisio">Diagnóstico Clinico</label>
+
+                </div>
+                <div>
+                    <input class="inputs__decoration__complete" [ngClass]="aplicaCssErro('dgfisio')" type="text"
+                        formControlName="dgfisio" id="dgfisio" placeholder=" Diagnóstico Clinico">
+                    <app-campo-control-erro [mostrarErro]="verificaNotValidTouched('dgfisio')"
+                        msgErro="Endereço Comercial obrigatório.">
+                    </app-campo-control-erro>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="cadastro">
+
+            <button routerLink="" type="button" (click)="reset()">Cancelar</button>
+            <button type="submit" [disabled]='!formulario.valid'>Salvar</button>
+
+        </div>
+    </form>
+</section>

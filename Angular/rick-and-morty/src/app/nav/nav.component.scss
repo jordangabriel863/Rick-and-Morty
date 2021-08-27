@@ -1,0 +1,80 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgb(255, 255, 255);
+  height: 10vh;
+
+  &__image {
+    margin-left: 3vh;
+    height: 6.5vh;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+
+
+    &__format {
+      text-decoration: none;  
+      margin-right: 3vh;
+      border: none;
+      background-color: rgb(255, 255, 255);
+      font-family: Fantasy;
+      color: black;
+
+
+    }
+
+    &__format:nth-child(3) {
+      text-decoration: none;
+      margin-right: 2vh;
+      border-radius: 3px;
+      color: black;
+
+    }
+
+    &__format:nth-child(3):hover {
+      text-align: center;
+      margin-right: 2vh;
+      width: 10vh;
+      background-color: rgb(253, 194, 0);
+      color: white;
+
+    }
+  }
+
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+
+  &__apresentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+    &__text {
+    letter-spacing: 15px;
+      font-size: 3rem;
+      font-family: Fantasy;
+    }
+
+    &__format1 {
+      width: 30vh
+    }
+
+    &__format2 {
+      width: 80vh;
+    }
+  }
+}
+
+.color {
+  color: yellow;
+  width: 100%;
+}

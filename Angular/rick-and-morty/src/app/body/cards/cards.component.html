@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+<section *ngIf="Allpersonagens | async as personagens;">
+
+    <div class="card" *ngFor="let personagem of personagens">
+        <figure class="card__figure">
+            <img class="card__image" [src]="personagem.image">
+            <div class="card__text">
+                <p class="card__text__title">{{personagem.name}}</p>
+                <span class="card__text__info">
+                    <span *ngIf="personagem.status == 'Alive'" class="card__text__info__iconalive"> </span>
+                    <span *ngIf="personagem.status == 'Dead'" class="card__text__info__icondead"> </span>
+                    <span *ngIf="personagem.status == 'unknown'" class="card__text__info__iconunknown"> </span>
+
+                    {{personagem.status}} - {{personagem.species}}
+                </span>
+
+                <p class="card__text__info__title">Origin: </p>
+                <p class="card__text__info__title__origin">{{personagem.origin.name}}</p>
+            </div>
+        </figure>
+    </div>
+</section>

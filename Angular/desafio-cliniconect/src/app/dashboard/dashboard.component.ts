@@ -10,14 +10,17 @@ import { Cadastros } from './Interface/cadastros';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  Allcadastros:any
   cadastros: Cadastros
-  exibeDetalhes: boolean = true
+ 
   exibeDetalhesPersonalizado: boolean = true
+  detalhesDashboardPersonalizados: Observable<any>
+
+  exibeDetalhes: boolean = true
   exibeDashboard: boolean = true
   detalhesDashboard: Observable<any>
-  detalhesDashboardPersonalizados: Observable<any>
-  Allcadastros
+  
+  
 
   queryField = new FormControl();
   results: Observable<any>;
@@ -40,6 +43,7 @@ export class DashboardComponent implements OnInit {
       this.results = this.cadastroSvc.getCliente(value)
       console.log(value)
       this.exibeDashboard = false;
+      
     } else {
       this.exibeDashboard = true;
     }

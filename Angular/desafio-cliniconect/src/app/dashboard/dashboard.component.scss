@@ -9,7 +9,11 @@
     @content;
   }
 }
-
+@mixin for-pocket {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
 
 
 @mixin flx($property, $jty-cnt, $algn-itm, $position) {
@@ -86,6 +90,9 @@ section {
             font-size: 0.6rem;
             height: 1.9vh;
           }
+          @include for-pocket{
+            height: 2.3vh;
+          }  
         }
 
         .search__button__decoration {
@@ -96,7 +103,9 @@ section {
           @include for-phone {
             height: 2.5vh;
           }
-
+          @include for-pocket{
+            height: 3vh;
+          }           
           svg {
             color: rgb(184, 184, 184);
             cursor: pointer;
@@ -124,7 +133,7 @@ section {
       border-radius: 10px;
 
       @include for-mobile {
-        width: 100vh;
+        width: 100%;
       }
 
 
@@ -141,11 +150,16 @@ section {
           padding-left: 3vh;
 
           @include for-phone {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
+            padding-left: 1.5vh;
           }
 
           @include for-mobile {
-            font-size: 0.4rem;
+            font-size: 0.6rem;
+            padding-left: 0.8vh
+          }
+          @include for-pocket{
+            padding-left: 0.3vh
           }
 
 

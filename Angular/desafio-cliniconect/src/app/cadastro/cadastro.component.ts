@@ -51,7 +51,7 @@ export class CadastroComponent implements OnInit {
 
     } else {
       console.log("Formulario Invalido")
-     this.verificaValidacoesForm(this.formulario);
+     
     }
     
   }
@@ -59,16 +59,6 @@ export class CadastroComponent implements OnInit {
     this.formulario.reset();
   }
 
-  verificaValidacoesForm(formGroup: FormGroup){
-    Object.keys(formGroup.controls).forEach(campo=>{
-      console.log(campo);
-      const controle = formGroup.get(campo);
-      controle.markAsDirty();
-      if(controle instanceof FormGroup){
-        this.verificaValidacoesForm(controle);
-      }
-    })
-  }
 
 
   verificaNotValidTouched(campo){

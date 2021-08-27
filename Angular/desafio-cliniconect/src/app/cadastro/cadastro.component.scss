@@ -10,6 +10,17 @@
   }
 }
 
+@mixin for-pocket {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
+@mixin for-ipad-pro {
+  @media (min-height: 1365px) {
+    @content;
+  }
+}
 
 
 @mixin flx($property, $jty-cnt, $algn-itm, $position) {
@@ -40,6 +51,11 @@ section {
       font-size: 1.5rem;
     }
 
+    @include for-ipad-pro {
+      font-size: 3rem;
+    }
+
+
   }
 
   form {
@@ -57,6 +73,14 @@ section {
     @include for-phone {
 
       width: 50vh;
+    }
+
+    @include for-pocket {
+      width: 45vh;
+    }
+
+    @include for-ipad-pro {
+      width: 70vh;
     }
 
     .identificacao {
@@ -183,6 +207,14 @@ section {
       @include for-phone {
         font-size: 1rem;
       }
+
+      @include for-pocket {
+        font-size: 1.5rem;
+      }
+
+      @include for-ipad-pro {
+        font-size: 3rem;
+      }
     }
 
     .flex {
@@ -199,11 +231,19 @@ section {
       margin-bottom: 1vh;
 
       @include for-mobile {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
 
       @include for-phone {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
+      }
+
+      @include for-pocket {
+        font-size: 0.6rem;
+      }
+
+      @include for-ipad-pro {
+        font-size: 1.5rem;
       }
 
     }
@@ -229,6 +269,15 @@ section {
         font-size: 0.6rem;
       }
 
+      @include for-pocket {
+        font-size: 0.6rem;
+      }
+
+      @include for-ipad-pro {
+        font-size: 1.2rem;
+        width: 90%;
+      }
+
 
       &__complete {
         width: 82.5vh;
@@ -245,6 +294,15 @@ section {
 
         @include for-phone {
           font-size: 0.6rem;
+        }
+
+        @include for-pocket {
+          font-size: 0.6rem;
+        }
+
+        @include for-ipad-pro {
+          font-size: 1.2rem;
+          width: 196%;
         }
 
       }
@@ -269,6 +327,11 @@ section {
         height: 4vh;
         font-size: 0.6rem;
       }
+
+      @include for-ipad-pro {
+        font-size: 1.2rem;
+        width: 90%;
+      }
     }
 
     .select__decoration {
@@ -282,6 +345,15 @@ section {
       @include for-phone {
         width: 197.5%;
         font-size: 0.6rem;
+      }
+
+      @include for-pocket {
+        font-size: 0.6rem;
+      }
+
+      @include for-ipad-pro {
+        font-size: 1.2rem;
+        width: 90%;
       }
     }
 
@@ -379,16 +451,19 @@ section {
         grid-row: 15/17;
       }
 
+
       .dgclini {
         grid-column: 1/2;
         grid-row: 2/2;
         margin-left: 2vh;
+
       }
 
       .dgfisio {
         grid-column: 1/2;
         grid-row: 3/3;
         margin-left: 2vh;
+
       }
 
     }
@@ -414,6 +489,14 @@ section {
         margin-right: 1%;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         cursor: pointer;
+
+        @include for-mobile {
+          font-size: 0.8rem;
+        }
+
+        @include for-phone {
+          font-size: 0.5rem;
+        }
       }
 
       button:nth-child(2):disabled {
@@ -423,6 +506,7 @@ section {
         opacity: .70;
         color: white;
         cursor: pointer;
+
       }
 
       button:nth-child(1) {
@@ -435,6 +519,14 @@ section {
         margin-right: 1%;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         cursor: pointer;
+
+        @include for-mobile {
+          font-size: 0.8rem;
+        }
+
+        @include for-phone {
+          font-size: 0.5rem;
+        }
 
       }
 

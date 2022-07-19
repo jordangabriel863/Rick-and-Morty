@@ -1,0 +1,286 @@
+.container-fluid {
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+
+  .row__side {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 0px 0px 20px;
+    border-top: 3px solid rgb(235, 235, 235);
+    border-bottom: 5px solid rgb(235, 235, 235);
+    border-left: 5px solid rgb(235, 235, 235);
+    border-right: 3px solid rgb(235, 235, 235);
+
+    .row {
+      width: 105%;
+      flex-wrap: wrap;
+      height: 15vh;
+      text-align: center;
+
+      .optionsDecoration {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 40%;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(151, 151, 151);
+        cursor: pointer;
+
+        i {
+          display: flex;
+          margin-right: 1vh;
+          margin-left: 3vh;
+        }
+
+      }
+
+      .optionsDecoration:hover {
+        background-color: rgba(62, 43, 235, 0.932);
+        border-radius: 8px 8px 8px 8px;
+        color: white;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 50%;
+      margin-top: 2%;
+      margin-bottom: 10%;
+
+      img {
+        width: 40%;
+
+      }
+
+      i {
+        cursor: pointer;
+      }
+
+    }
+
+  }
+
+  .row__side__closed {
+    position: absolute;
+    left: -20%;
+
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 0px 0px 20px;
+    border-top: 3px solid rgb(235, 235, 235);
+    border-bottom: 5px solid rgb(235, 235, 235);
+    border-left: 5px solid rgb(235, 235, 235);
+    border-right: 3px solid rgb(235, 235, 235);
+
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8vh;
+    background-color: rgb(255, 255, 255);
+    border-top: 3px solid rgb(235, 235, 235);
+    border-right: 5px solid rgb(235, 235, 235);
+    border-radius: 0px 20px 0px 0px;
+
+    &__search {
+      display: flex;
+      justify-content: flex-start;
+      width: 60%;
+      padding-left: 0%;
+
+      &__menu {
+        cursor: pointer;
+        margin-right: 4%;
+
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: black;
+        }
+      }
+
+      &__svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5%;
+
+        svg {
+          width: 1.1rem;
+          height: 1.1rem;
+          color: grey;
+
+        }
+
+
+      }
+
+      input {
+        display: flex;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+    }
+
+
+    &__profile {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 30%;
+
+
+
+
+      &__icons {
+        display: flex;
+        justify-content: flex-end;
+        width: 35%;
+        margin-right: 2vh;
+
+        &__format {
+          margin-right: 2vh;
+        }
+
+      }
+
+      &__options {
+
+        display: flex;
+        align-items: center;
+        border-left: 1px solid grey;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+
+
+        &__person {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 65%;
+          margin-left: 3vh;
+
+
+          svg {
+            margin-right: 1vh;
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+
+        button {
+          border: none;
+          background-color: white;
+
+        }
+      }
+
+
+
+    }
+
+
+
+  }
+
+  .body {
+
+    padding: 0%;
+    margin-top: 0.5%;
+
+    #body__scroll {
+      display: flex;
+      justify-content: center;
+      height:90.5vh;
+      width: 100%;
+      
+      overflow-y: scroll;
+      scroll-margin-bottom: 30em ;
+      background-color:white;
+      
+
+    }
+
+    table {
+      width: 99%;
+      height: auto;
+      border: none;
+      
+      tr{
+        
+        border: none;
+        
+
+        .acoes{
+          display: flex;
+          justify-content: space-between;
+
+          i{
+            width: 1.3rem;
+            cursor: pointer;
+          }
+          button{
+            border-radius: 3px 3px 3px 3px;
+            border:1px solid grey;
+            background-color:black;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+          }
+          button:active{
+            background-color:rgb(41, 41, 41);
+          }
+        }
+      }
+      th{
+        border: none;
+      }
+      
+      td{
+        border: none;
+        font-weight: 500;
+      }
+      .faturas{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 99%;
+        height: auto;
+        background-color:white;
+        top: 0%;
+
+        &__title{
+          width: 300%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          i{
+            cursor: pointer;
+            svg{
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+
+}

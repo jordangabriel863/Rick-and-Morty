@@ -1,0 +1,273 @@
+<div class="container-fluid">
+  <div class=" row ">
+    
+    <div class="col-sm-2" [ngClass]="{ 'row__side': open, 'row__side__closed' : !open}" >
+      <div class="row">
+        <div class="row__side__logo">
+          
+          <img src="../assets/img/e8e51540651fcf406592883e1526833c.jpg">
+          
+          <i class="bi bi-arrow-bar-left" (click)="openSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"/>
+            </svg>
+          </i>
+
+          
+        </div>
+        <div class="optionsDecoration">
+
+          <i class="bi bi-house-door">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door"
+              viewBox="0 0 16 16">
+              <path
+                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+            </svg>
+          </i>
+
+          Darshboard
+          
+        </div>
+        <div class="optionsDecoration">
+
+          <i class="bi bi-house-door">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door"
+              viewBox="0 0 16 16">
+              <path
+                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+            </svg>
+          </i>
+
+          Darshboard
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class=" col-sm-10" [ngClass]="{'col-sm-10' : open, 'col-sm-12': !open}">
+      <div class="row">
+        <div class="col-sm-12 navbar ">
+          
+          <div class=" col-sm-5 navbar__search "  >
+            <i class="bi bi-list navbar__search__menu"  (click)="openSidebar()">
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </i>
+
+            
+            <i class="bi bi-search navbar__search__svg">
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </i>
+            <input type="text" placeholder="Search" (keyup.enter)="onSearch()" [formControl]="queryField">
+            
+          </div>
+          
+          <div class="navbar__profile">
+
+            <div class="navbar__profile__icons">
+              <i class="bi bi-table navbar__profile__icons__format">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+                </svg>
+              </i>
+
+
+              <i class="bi bi-bell">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg>
+              </i>
+
+
+
+            </div>
+
+            <div class="navbar__profile__options">
+              
+            <i class="bi bi-person-circle navbar__profile__options__person">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+              <p>Jordan</p>
+              
+            </i>
+            <button>
+              <i class="bi bi-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </i>
+
+            </button>
+          </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="body col-sm-12 " >
+          
+          <div *ngIf="Allunidades | async as unidades" id="body__scroll" >
+
+            <table *ngIf="exibeUnidades"  class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Distribuidora</th>
+                <th scope="col">Número</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Ações</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let unidade of unidades; index as i">
+                <th scope="row">{{unidade.id }}</th>
+                <td>{{unidade.nome}}</td>
+                <td>{{unidade.distribuidora}}</td>
+                <td>{{unidade.numero}}</td>
+                <td>{{unidade.endereco}}</td>
+                <td class="acoes">
+                  <i class="bi bi-pencil-square">
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                  </i>
+                  <i class="bi bi-trash-fill" (click)="removeUnidade(unidade.id, unidade.distribuidora)">
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                    </svg>
+                  </i>
+                  <button (click)="mostraFaturas(unidade.id)">Faturas</button>
+                </td>
+              </tr>
+              </tbody>
+              <div class="faturas" *ngIf="openFaturas">
+                  <div *ngIf="AllFaturas | async as faturas" id="body__scroll">
+                     
+                          <table class="table table-striped">
+                            
+                            <thead>
+                              <div class="faturas__title">
+                                <h1>Faturas:</h1>
+                                <i class="bi bi-x" (click)="fechaFaturas()">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                  </svg>
+                                </i>
+                              </div>
+                              <tr >
+                                <th scope="col">#</th>
+                                <th scope="col">Data de vencimento</th>
+                                <th scope="col">Consumo</th>
+                                <th scope="col">valor</th>
+                              </tr>
+                              </thead>
+                              
+                              <tbody *ngIf="faturas">
+                            
+                            <tr *ngFor="let fatura of faturas; index as i">
+                              <th scope="row">{{ i + 1 }}</th>
+                              <td>{{fatura.data_de_vencimento}}</td>
+                              <td>{{fatura.consumo}}</td>
+                              <td>{{fatura.valor}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                  </div>
+              </div>
+            </table>
+
+
+
+            <table *ngIf="results"  class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Distribuidora</th>
+                <th scope="col">Número</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Ações</th>
+              </tr>
+              </thead>
+              <tbody *ngIf=" results | async as unidadesId">
+              <tr *ngFor="let unidadeId of unidadesId" >
+                <th scope="row">{{unidadeId.numero }}</th>
+                <!--td>{{unidadeId.nome}}</td>
+                <td>{{unidadeId.distribuidora}}</td>
+                <td>{{unidadeId.numero}}</td>
+                <td>{{unidadeId.endereco}}</td>
+                <td class="acoes">
+                  <i class="bi bi-pencil-square">
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                  </i>
+                  <i class="bi bi-trash-fill" (click)="removeUnidade(unidadeId.id, unidadeId.distribuidora)">
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                    </svg>
+                  </i>
+                  <button (click)="mostraFaturas(unidadeId.id)">Faturas</button>
+                </td-->
+              </tr>
+              </tbody>
+              <div class="faturas" *ngIf="openFaturas">
+                  <div *ngIf="AllFaturas | async as faturas" id="body__scroll">
+                     
+                          <table class="table table-striped">
+                            
+                            <thead>
+                              <div class="faturas__title">
+                                <h1>Faturas:</h1>
+                                <i class="bi bi-x" (click)="fechaFaturas()">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                  </svg>
+                                </i>
+                              </div>
+                              <tr >
+                                <th scope="col">#</th>
+                                <th scope="col">Data de vencimento</th>
+                                <th scope="col">Consumo</th>
+                                <th scope="col">valor</th>
+                              </tr>
+                              </thead>
+                              
+                              <tbody *ngIf="faturas">
+                            
+                            <tr *ngFor="let fatura of faturas; index as i">
+                              <th scope="row">{{ i + 1 }}</th>
+                              <td>{{fatura.data_de_vencimento}}</td>
+                              <td>{{fatura.consumo}}</td>
+                              <td>{{fatura.valor}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                  </div>
+              </div>
+            </table>
+            
+          
+
+          </div>
+  
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

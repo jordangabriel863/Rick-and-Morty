@@ -1,0 +1,12 @@
+<section *ngIf="Allpersonagens | async as personagens;">
+    <div *ngFor="let personagem of personagens">
+        <figure class="card">
+            <img class="card__image" [src]="personagem.image">
+            <div>
+                <p class="card__text">{{personagem.name}}</p>
+                <p class="card__text">{{personagem.status}} - {{personagem.species}}</p>
+                <p class="card__text">Last know location: {{personagem.location.name}}</p>
+            </div>
+        </figure>
+    </div>
+</section>
